@@ -1,0 +1,17 @@
+C:\VSCode\OESP\OESP.Services\bin\Debug\net5.0\OESP.Services.deps.json
+C:\VSCode\OESP\OESP.Services\bin\Debug\net5.0\OESP.Services.dll
+C:\VSCode\OESP\OESP.Services\bin\Debug\net5.0\ref\OESP.Services.dll
+C:\VSCode\OESP\OESP.Services\bin\Debug\net5.0\OESP.Services.pdb
+C:\VSCode\OESP\OESP.Services\bin\Debug\net5.0\OESP.Domain.dll
+C:\VSCode\OESP\OESP.Services\bin\Debug\net5.0\OESP.Infra.dll
+C:\VSCode\OESP\OESP.Services\bin\Debug\net5.0\OESP.Domain.pdb
+C:\VSCode\OESP\OESP.Services\bin\Debug\net5.0\OESP.Infra.pdb
+C:\VSCode\OESP\OESP.Services\obj\Debug\net5.0\OESP.Services.csproj.AssemblyReference.cache
+C:\VSCode\OESP\OESP.Services\obj\Debug\net5.0\OESP.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSCode\OESP\OESP.Services\obj\Debug\net5.0\OESP.Services.AssemblyInfoInputs.cache
+C:\VSCode\OESP\OESP.Services\obj\Debug\net5.0\OESP.Services.AssemblyInfo.cs
+C:\VSCode\OESP\OESP.Services\obj\Debug\net5.0\OESP.Services.csproj.CoreCompileInputs.cache
+C:\VSCode\OESP\OESP.Services\obj\Debug\net5.0\OESP.Services.csproj.CopyComplete
+C:\VSCode\OESP\OESP.Services\obj\Debug\net5.0\OESP.Services.dll
+C:\VSCode\OESP\OESP.Services\obj\Debug\net5.0\ref\OESP.Services.dll
+C:\VSCode\OESP\OESP.Services\obj\Debug\net5.0\OESP.Services.pdb

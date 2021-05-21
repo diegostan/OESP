@@ -1,0 +1,12 @@
+C:\VSCode\OESP\OESP.Domain\bin\Debug\net5.0\OESP.Domain.deps.json
+C:\VSCode\OESP\OESP.Domain\bin\Debug\net5.0\OESP.Domain.dll
+C:\VSCode\OESP\OESP.Domain\bin\Debug\net5.0\ref\OESP.Domain.dll
+C:\VSCode\OESP\OESP.Domain\bin\Debug\net5.0\OESP.Domain.pdb
+C:\VSCode\OESP\OESP.Domain\obj\Debug\net5.0\OESP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSCode\OESP\OESP.Domain\obj\Debug\net5.0\OESP.Domain.AssemblyInfoInputs.cache
+C:\VSCode\OESP\OESP.Domain\obj\Debug\net5.0\OESP.Domain.AssemblyInfo.cs
+C:\VSCode\OESP\OESP.Domain\obj\Debug\net5.0\OESP.Domain.csproj.CoreCompileInputs.cache
+C:\VSCode\OESP\OESP.Domain\obj\Debug\net5.0\OESP.Domain.dll
+C:\VSCode\OESP\OESP.Domain\obj\Debug\net5.0\ref\OESP.Domain.dll
+C:\VSCode\OESP\OESP.Domain\obj\Debug\net5.0\OESP.Domain.pdb
+C:\VSCode\OESP\OESP.Domain\obj\Debug\net5.0\OESP.Domain.csproj.AssemblyReference.cache
