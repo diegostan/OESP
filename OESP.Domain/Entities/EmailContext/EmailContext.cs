@@ -5,6 +5,7 @@ namespace OESP.Domain.Entities.EmailContext
 {
     public class EmailContext : EntityBase
     {
+        
         public EmailContext(string emailAddress, string emailOrigin, string message, string body)
         {
             Hash = new Guid();

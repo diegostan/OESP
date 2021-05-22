@@ -1,5 +1,6 @@
+using System;
 using OESP.Domain.Commands.Interfaces;
-using OESP.Domain.Entities.ApplicationContext;
+using OESP.Domain.Entities.EmailContext;
 using OESP.Domain.Notifications;
 using OESP.Domain.Validates;
 
@@ -14,7 +15,7 @@ namespace OESP.Domain.Commands
             Message = message;
             Body = body;
         }
-        
+        public Guid Hash { get; set; }
         public string EmailAddress{get; set;}
         public string EmailOrigin{get; set;}
         public string Message{get; set;}

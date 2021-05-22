@@ -11,6 +11,7 @@ namespace OESP.Domain.Entities.EventContext
         public EntityBase()
         {
             _notifications = new List<Notification>();
+             ID = new Guid();
         }
          public Guid ID{get; protected set;}         
 

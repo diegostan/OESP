@@ -30,14 +30,14 @@ namespace OESP.API.Services
                 _createEvent.Handle(command);
             }
 
-            SendMail(app);
+            SendMail(app, command);
         }
 
-        public void SendMail(ApplicationContext app)
+        public void SendMail(ApplicationContext app, CreateEventSourceCommand commandEvent)
         {
             string emailMessage = $"A aplicação {app.ApplicationName} parou de funcionar às {app.EventDateTime}";
             var command = new SendEmailCommand(emailAddress: EmailConfig.EmailAddress
-            , emailOrigin: EmailConfig.EmailOrigin, message: emailMessage, $"OESP {app.ApplicationName}");
+            , emailOrigin: EmailConfig.EmailOrigin, message: emailMessage, $"OESP {app.ApplicationName} Hash do evento {commandEvent.ID}");
 
 
 

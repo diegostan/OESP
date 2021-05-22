@@ -32,7 +32,7 @@ namespace OESP.API.MonitorServer
 
                 foreach (var app in _listAllApplications)
                 {
-                    if(app.IsRunning && DateTime.Now.Subtract(app.EventDateTime)>TimeSpan.FromSeconds(60))
+                    if(app.IsRunning && DateTime.Now.Subtract(app.EventDateTime)>TimeSpan.FromSeconds(30))
                     {
                         app.SetRunningToOff();
                         _repository.UpdateApplication(app);

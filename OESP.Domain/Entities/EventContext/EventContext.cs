@@ -7,7 +7,7 @@ namespace OESP.Domain.Entities.EventContext
         
         public EventContext(string name, string description, bool isActive)
         {
-            ID = new Guid();
+           
             Name = name;
             Description = description;
             EventDateTime = DateTime.Now;
@@ -16,7 +16,7 @@ namespace OESP.Domain.Entities.EventContext
         }
         public EventContext(string name, string description, bool isActive, string message)
         {
-            ID = new Guid();
+            
             Name = name;
             Description = description;
             EventDateTime = DateTime.Now;
