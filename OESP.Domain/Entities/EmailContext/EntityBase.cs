@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using OESP.Domain.Notifications;
 
@@ -9,9 +10,10 @@ namespace OESP.Domain.Entities.EmailContext
         
         public EntityBase()
         {
+            Hash = new Guid();
             _notifications = new List<Notification>();
         }
-         public int ID{get; protected set;}
+         public Guid Hash{get; private set;}
 
          public string MessageResult {get; protected set;}
          public IReadOnlyList<Notification> Notifications => _notifications;

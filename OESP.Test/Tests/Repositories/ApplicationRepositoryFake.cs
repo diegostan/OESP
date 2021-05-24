@@ -7,6 +7,11 @@ namespace OESP.Test.Tests.Repositories
 {
     public class ApplicationRepositoryFake : IApplicationRepository
     {
+        public void CreateApplication(ApplicationContext appContext)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Task<IEnumerable<ApplicationContext>> GetAllApplications()
         {
             throw new System.NotImplementedException();

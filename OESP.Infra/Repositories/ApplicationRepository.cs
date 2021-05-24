@@ -16,7 +16,13 @@ namespace OESP.Infra.Repositories
        {
            _repository = context;
        }
-       
+
+        public void CreateApplication(ApplicationContext appContext)
+        {
+            _repository.Add(appContext);
+            _repository.SaveChanges();
+        }
+
         public async Task<IEnumerable<ApplicationContext>> GetAllApplications()
         {
             return await _repository.ApplicationContexts.AsNoTracking().ToListAsync();

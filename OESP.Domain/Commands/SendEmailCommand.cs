@@ -13,9 +13,8 @@ namespace OESP.Domain.Commands
             EmailAddress = emailAddress;
             EmailOrigin = emailOrigin;
             Message = message;
-            Body = body;
-        }
-        public Guid Hash { get; set; }
+            Body = body;            
+        }        
         public string EmailAddress{get; set;}
         public string EmailOrigin{get; set;}
         public string Message{get; set;}

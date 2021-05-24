@@ -22,7 +22,6 @@ namespace OESP.API
             Configuration = configuration;
             
         }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -36,24 +35,25 @@ namespace OESP.API
             /*Context*/
             services.AddDbContext<DataContext>(opt =>
              opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
-            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("data"));
+            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("database"));
             
             /*Serviços hospedados*/
             services.AddHostedService<MonitorServer.Monitor>();            
 
-            /*Inversão de controle com DI*/
+            /*Inversão de controle com DI para o escopo*/
             services.AddScoped<IApplicationRepository, ApplicationRepository>();
             services.AddScoped<IEventStoreRepository, EventStoreRepository>();
             
+            /*Inversão de controle para os Handlers*/
             services.AddTransient<CreateApplicationHandler, CreateApplicationHandler>();
-            services.AddTransient<UpdateApplicationStateHandler, UpdateApplicationStateHandler>();
+            services.AddTransient<UpdateApplicationStateHandler, UpdateApplicationStateHandler>();                        
             services.AddTransient<SendEmailHandler, SendEmailHandler>();
             services.AddTransient<CreateEventSourceHandler, CreateEventSourceHandler>();
             
+            /*Inversão de controle para os serviçoes*/
             services.AddTransient<IEmailService, EmailService>();                        
             
-            
-
+            /*Documentação do Swagger*/
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "OESP.API", Version = "v1" });
@@ -71,6 +71,7 @@ namespace OESP.API
             }
 
             app.UseHttpsRedirection();
+
             /*cors SOMENTE em dev*/
             app.UseCors(s => s.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseRouting();

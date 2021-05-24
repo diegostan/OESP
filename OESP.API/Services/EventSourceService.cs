@@ -20,34 +20,38 @@ namespace OESP.API.Services
         }
         public void InsertEventSource(ApplicationContext app)
         {
-            var command = new CreateEventSourceCommand(name: app.ApplicationName
+            var commandEvent = new CreateEventSourceCommand(name: app.ApplicationName
             , description: app.ApplicationDescription, isActive: app.IsRunning
             , message: $"A aplicação {app.ApplicationName} foi encerrada.");
 
             using (var serviceScope = this.ServiceProvider.CreateScope())
             {
                 _createEvent = serviceScope.ServiceProvider.GetRequiredService<CreateEventSourceHandler>();
-                _createEvent.Handle(command);
+                _createEvent.Handle(commandEvent);
             }
 
-            SendMail(app, command);
+            SendMail(app, commandEvent);
         }
 
         public void SendMail(ApplicationContext app, CreateEventSourceCommand commandEvent)
         {
-            string emailMessage = $"A aplicação {app.ApplicationName} parou de funcionar às {app.EventDateTime}";
+            string bodyMessage = $"A aplicação {app.ApplicationName} parou de funcionar às {app.EventDateTime} " +
+            ", email enviado automaticamente.";            
+            string emailMessage = $"OESP {app.ApplicationName}";
+            
             var command = new SendEmailCommand(emailAddress: EmailConfig.EmailAddress
-            , emailOrigin: EmailConfig.EmailOrigin, message: emailMessage, $"OESP {app.ApplicationName} Hash do evento {commandEvent.ID}");
-
-
+            , emailOrigin: EmailConfig.EmailOrigin, message: emailMessage, body: bodyMessage);
+                        
 
             using (var scope = this.ServiceProvider.CreateScope())
             {
-
                 _sendEmail = scope.ServiceProvider.GetRequiredService<SendEmailHandler>();
                 var result = (CommandResult)_sendEmail.Handle(command);
+
+
                 if (result.Ok)
                 {
+
                     InsertEmailEventSource(app, command, true);
                 }
                 else

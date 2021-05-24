@@ -15,26 +15,20 @@ namespace OESP.API.Controllers
     [Route("v1/application/")]
     public class OESPController : ControllerBase
     {
+       
+       
+
         [AllowAnonymous]
-        [Route("event/")]
+        [Route("")]
         [HttpPost]
-        public CommandResult CreateEventSource([FromBody]CreateEventSourceCommand command,
-        [FromServices]CreateEventSourceHandler handler)
+        public CommandResult CreateApplication([FromServices]CreateApplicationHandler handler
+        ,[FromBody]CreateApplicationCommand command)
         {
             return (CommandResult)handler.Handle(command);
         }
 
         [AllowAnonymous]
-        [Route("email/")]
-        [HttpPost]
-        public CommandResult SendEmail([FromBody]SendEmailCommand command,
-        [FromServices]SendEmailHandler handler)
-        {
-            return (CommandResult)handler.Handle(command);
-        }
-
-        [AllowAnonymous]
-        [Route("update/")]
+        [Route("")]
         [HttpPut]
         public CommandResult UpdateApplicationEvent([FromServices]UpdateApplicationStateHandler handler
        , [FromBody] UpdateApplicationStateCommand command)
@@ -53,7 +47,7 @@ namespace OESP.API.Controllers
         }
 
         [AllowAnonymous]
-        [Route("byid/{id}")]
+        [Route("{id}")]
         [HttpGet]
         public Task<ApplicationContext> GetApplicationEventById(
             [FromServices] IApplicationRepository repository, int id)

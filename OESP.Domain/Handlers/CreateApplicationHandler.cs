@@ -23,7 +23,7 @@ namespace OESP.Domain.Handlers
             var app = new ApplicationContext(applicationName:command.ApplicationName
             ,applicationDescription:command.ApplicationDescription, isRunning:false);
             
-            //_repository.UpdateApplication(app);
+            _repository.CreateApplication(app);
             
             return new CommandResult(ok: true, propertyName:"UpdateApplicationStateCommand",
             message:"Comando executado com sucesso", null);

@@ -1,5 +1,4 @@
 using OESP.Domain.Commands.Interfaces;
-using OESP.Domain.Commands;
 
 namespace OESP.Domain.Handlers.Interfaces
 {

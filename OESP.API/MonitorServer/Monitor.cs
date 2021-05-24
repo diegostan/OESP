@@ -21,7 +21,7 @@ namespace OESP.API.MonitorServer
         {
             this.ServiceProvider = services;
         }
-
+        
         public void Monitoring()
         {
             using (var scope = this.ServiceProvider.CreateScope())
@@ -32,21 +32,19 @@ namespace OESP.API.MonitorServer
 
                 foreach (var app in _listAllApplications)
                 {
-                    if(app.IsRunning && DateTime.Now.Subtract(app.EventDateTime)>TimeSpan.FromSeconds(30))
+                    if (app.IsRunning && DateTime.Now.Subtract(app.EventDateTime) > TimeSpan.FromSeconds(30))
                     {
                         app.SetRunningToOff();
                         _repository.UpdateApplication(app);
-                         new EventSourceService(this.ServiceProvider).InsertEventSource(app);
+                        new EventSourceService(this.ServiceProvider).InsertEventSource(app);
                     }
-                        
                 }
             }
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _timerMonitor = new Timer(t => Monitoring(), null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(5));
-
+            _timerMonitor = new Timer(t => Monitoring(), null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(5));                      
             return Task.CompletedTask;
         }
 
