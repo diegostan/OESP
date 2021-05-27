@@ -25,7 +25,7 @@ de dados.
 * Hosted Services
 
 ## Modelagem e estrutura
-* TDD 
+* DDD 
 * CQRS
 * Event Sourcing
 * Repository Patterns
